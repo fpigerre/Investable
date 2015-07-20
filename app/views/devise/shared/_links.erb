@@ -1,9 +1,9 @@
 <%- if controller_name != 'sessions' %>
-    <%= link_to "SIGN IN", new_session_path(resource_name), class: 'btn btn-default btn-center rounded-corners' %>
+    <%= link_to 'SIGN IN', new_session_path(resource_name), class: 'btn btn-default btn-center rounded-corners' %>
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-    <%= link_to "SIGN UP", new_registration_path(resource_name), class: 'btn btn-default btn-center rounded-corners' %>
+    <%= link_to 'SIGN UP', new_registration_path(resource_name), class: 'btn btn-default btn-center rounded-corners' %>
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>

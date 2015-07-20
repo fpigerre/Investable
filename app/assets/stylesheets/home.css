@@ -74,6 +74,7 @@ body, html {
 .intro-header {
     margin-top: 70px; /* Stops NavBar overlapping */
     color: #f8f8f8;
+    /* TODO: Restore image */
     background: url(stock/fillphone.jpg) no-repeat center center;
     /*background-color: #d6d6d6;*/
     background-size: cover;
@@ -158,6 +159,7 @@ a:hover {
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
+    /* TODO: Restore image */
     background: url(stock/fillbg.jpg) no-repeat center center;
     /*background-color: #d6d6d6;*/
     background-size: cover;
