@@ -17,7 +17,7 @@ Essentially, the MIT License allows you to do anything with Investable's code, i
 but not limited to:
 - Using it for commercial purposes
 - Modifying any part of the software
-- Using and modifying Investable without distributing it
+- Using and modifying Investable without having to distribute the code
 
 As long as you include a copy of the [LICENSE]() file.
 
