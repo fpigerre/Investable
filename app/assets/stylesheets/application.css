@@ -121,7 +121,7 @@ a:focus {
     color: white;
 }
 
-.btn:focus,.btn:active {
+.btn:focus, .btn:active {
     outline: none !important;
 }
 
