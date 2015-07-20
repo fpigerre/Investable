@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="responsive-container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#navbar-main">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= image_tag('blue-placeholder.jpg', class: 'logo') %>
+      <p class="username">
+        <%= current_user.name %>
+      </p>
+      <%= link_to 'Stockable', user_root_path, class: 'brand' %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-main">
+      <ul class="nav navbar-nav links">
+        <li><%= link_to 'Home', user_root_path %></li>
+        <li class="active"><%= link_to 'Comparison', comparison_path %></li>
+        <li><%= link_to 'Markets', markets_path %></li>
+        <li><%= link_to 'BitCoin', bitcoin_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-icon"><%= link_to('', edit_user_registration_path, class: 'glyphicon glyphicon-wrench') %></li>
+        <li class="nav-icon"><%= link_to('', destroy_user_session_path, :method => :delete, class: 'glyphicon glyphicon-log-out') %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,138 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="responsive-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= image_tag('blue-placeholder.jpg', class: 'logo') %>
+      <span class="brand">Stockable</span>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-main">
+      <div class="nav navbar-form navbar-right">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon rounded-corners"><strong>@</strong></div>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |form| %>
+                <%= devise_error_messages! %>
+
+                <%= form.text_field :email, class: 'form-control rounded-corners', placeholder: 'Email' %>
+                </div>
+                <%= form.password_field :password, class: 'form-control rounded-corners', placeholder: 'Password' %>
+                </div>
+                <%= form.submit 'SIGN IN', class: 'btn btn-default login rounded-corners' %>
+            <% end %>
+            </div>
+    </div>
+  </div>
+</nav>
+
+<div class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="intro-message">
+          <h1>Stockable</h1>
+
+          <h3>Your investment advantage</h3>
+          <hr class="intro-divider">
+          <%= link_to 'SIGN UP', new_user_registration_path, class: 'btn btn-default btn-lg btn-sign-up rounded-corners' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section-a">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-sm-6">
+        <hr class="section-heading-spacer">
+        <div class="clearfix"></div>
+        <h2 class="section-heading">Manage Investments
+          <br><em>with ease</em></h2>
+
+        <p class="lead">Stockable makes staying on the ball easy. No matter where you are, relevant information
+          regarding investments and markets is at your fingertips within seconds.</p>
+      </div>
+      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+        <!--<img class="img-responsive" src="img/ipad.png" alt="">-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section-b">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+        <hr class="section-heading-spacer">
+        <div class="clearfix"></div>
+        <h2 class="section-heading">Compare stocks and commodities
+          <br><em>across thousands of variables</em></h2>
+
+        <p class="lead">With access to a hoard of big data, Stockable can compare currencies, resources, industries
+          and even BitCoin values across variables such as live occurrences, market trends and speculated events,
+          providing you with amazing market intelligence.</p>
+      </div>
+      <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+        <!--<img class="img-responsive" src="img/doge.png" alt="">-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section-a">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-sm-6">
+        <hr class="section-heading-spacer">
+        <div class="clearfix"></div>
+        <h2 class="section-heading">Broaden your
+          <br><em>horizons</em></h2>
+
+        <p class="lead">Stockable's unlimited potential makes it simple to keep track of
+          emerging markets. Market performance can be tracked, compared and analyzed as if
+          no boundaries existed.</p>
+      </div>
+      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+        <!--<img class="img-responsive" src="img/phones.png" alt="">-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>Welcome to your Stockable:</h2>
+      </div>
+      <div class="col-lg-6">
+        <%= link_to 'SIGN UP', new_user_registration_path, class: 'btn btn-default btn-lg btn-sign-up rounded-corners banner-button' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="copyright text-muted small">Copyright &copy; Stockable 2014. All Rights Reserved</p>
+        <ul class="list-inline">
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li class="footer-menu-divider">&sdot;</li>
+          <li><a class="nav-link" href="#terms">Terms</a></li>
+          <li class="footer-menu-divider">&sdot;</li>
+          <li><a class="nav-link" href="#privacy">Privacy</a></li>
+          <li class="footer-menu-divider">&sdot;</li>
+          <li><%= link_to "Forgot your password?", new_password_path(:user), class: 'nav-link' %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

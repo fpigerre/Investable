@@ -1,0 +1,91 @@
+/*
+ *= require sweet-alert
+ *= require nprogress
+*/
+@import url(http://fonts.googleapis.com/css?family=Raleway:300);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+
+body, h1, h2, h3, h4, h5, h6, .username {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    color: black;
+    /* TODO: Change font color/weight */
+}
+
+.links > li > a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+a:focus {
+    text-decoration: none;
+}
+
+.btn:focus, .btn:active {
+    outline: none !important;
+}
+
+.responsive-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar {
+    background: white;
+    height: 70px;
+    margin-bottom: 0;
+}
+
+.navbar-header, .navbar-right {
+    padding-top: 10px;
+}
+
+.rounded-corners {
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.username {
+    font-family: 'Railway', sans-serif;
+    margin-top: 2px;
+    font-size: 13px;
+    font-weight: 100;
+    position: absolute;
+    display: inline;
+    padding-left: 10px;
+}
+
+.brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 20px;
+    line-height: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-default .brand {
+    padding-left: 30px;
+    color: #00BCD4;
+    font-family: 'Railway', sans-serif;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin-left: 20px;
+}
+
+.nav-icon {
+    font-size: 20px;
+    font-weight: 400;
+}

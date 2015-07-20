@@ -1,0 +1,273 @@
+/*
+ * This is a manifest file that will be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require sweet-alert
+ *= require nprogress
+ */
+@import url(http://fonts.googleapis.com/css?family=Raleway:300);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6, input, .username {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.navbar {
+    background: white;
+    height: 70px;
+    margin-bottom: 0;
+}
+
+.navbar-header, .navbar-right {
+    padding-top: 10px;
+}
+
+.responsive-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.username {
+    font-family: 'Railway', sans-serif;
+    margin-top: 2px;
+    font-size: 13px;
+    font-weight: 100;
+    position: absolute;
+    display: inline;
+    padding-left: 10px;
+}
+
+.brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 20px;
+    line-height: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-default .brand {
+    padding-left: 30px;
+    color: #00BCD4;
+    font-family: 'Railway', sans-serif;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin-left: 20px;
+}
+
+.links > li > a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.navbar-right > .btn {
+    margin-top: 10px;
+}
+
+a:focus {
+    text-decoration: none;
+}
+
+.navbar-right .btn {
+    margin-right: 7px;
+}
+
+.center {
+    padding-top: 10%;
+}
+
+.center .form-group label {
+    padding-right: 30px;
+}
+
+.header {
+    padding-bottom: 15px;
+}
+
+.btn {
+    color: white;
+    background-color: #00BCD4;
+    border: none;
+    font-family: 'Railway', sans-serif;
+}
+
+.btn:hover {
+    background-color: #0097A7;
+    color: white;
+}
+
+.btn:focus,.btn:active {
+    outline: none !important;
+}
+
+.rounded-corners {
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.nav-icon {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* User Settings */
+.sidebar {
+    margin-top: 20px;
+    min-height: 100%;
+    position: relative;
+    float: left;
+    width: 320px;
+    border-right: 2px solid #dedede;
+}
+
+/* Sidebar content */
+.sidebar-item {
+    display: block;
+    padding: 20px 10px 20px 10px;
+    margin: 20px 10px 20px 10px;
+
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.sidebar-item.active,
+.sidebar-item.active a,
+.sidebar-item.active i,
+.sidebar-item:hover,
+.sidebar-item:focus,
+.sidebar-item:focus i {
+    text-decoration: none;
+    background-color: #00BCD4;
+    border-color: transparent;
+    color: white;
+}
+
+.sidebar-item:hover a, .sidebar-item:hover i {
+    color: white;
+}
+
+.sidebar-item i {
+    font-size: 20px;
+    padding-right: 10px;
+    color: #ababab;
+}
+
+.sidebar a {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 23px;
+    color: #ababab;
+    text-decoration: none;
+}
+
+@media (min-width: 48rem) {
+    .sidebar-item {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.content {
+    margin-top: 50px;
+    margin-left: 320px;
+    margin-right: 20px;
+    padding-top: 50px;
+    padding-left: 12px;
+}
+
+.content label {
+    padding-top: 7px;
+    text-align: right;
+}
+
+.form-group {
+    padding-bottom: 30px;
+}
+
+.cancel h3 {
+    padding-bottom: 30px;
+}
+
+.black_overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: .80;
+    filter: alpha(opacity=80);
+}
+
+.white_content {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    padding: 20px;
+    border: 5px solid #777777;
+    background-color: white;
+    z-index: 1002;
+    overflow: auto;
+
+    text-align: center;
+}
+
+.white_content .glyphicon {
+    color: black;
+    text-decoration: none;
+    float: right;
+}
+
+@media (max-width: 300px) {
+    .navbar-default .brand {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 325px) {
+    .navbar-default .brand {
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 550px) {
+    .center {
+        padding: 0;
+        margin: 100px;
+    }
+}
