@@ -23,7 +23,7 @@ class StocksController < ApplicationController
         create
       end
       $stock = Stock.find(params[:symbol])
-      @input = Stock.getoverview(params)
+      @input = Stock.get_overview(params)
       if @input === 404
         not_found
       else

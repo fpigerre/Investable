@@ -14,6 +14,14 @@ class Stock < ActiveRecord::Base
     symbol.parameterize
   end
 
+  def get_icon
+    if Rails.application.assets.find_asset(symbol).nil?
+      return 'logos/' + symbol + '.png'
+    else
+      return Rails.application.assets.find_asset(symbol).pathname
+    end
+  end
+
   def self.not_exists?(symbol)
     self.find(symbol)
     false
@@ -22,13 +30,9 @@ class Stock < ActiveRecord::Base
   end
 
   def self.check_valid(symbol)
-    uri = URI.encode('http://ichart.yahoo.com/table.csv?s=' + symbol + getyearcodes)
+    uri = URI.encode('http://ichart.yahoo.com/table.csv?s=' + symbol + get_year_codes)
     body = Net::HTTP.get(URI.parse(uri)).to_s
-    if body.include? '404 Not Found'
-      false
-    else
-      true
-    end
+    !body.include? '404 Not Found'
   end
 
   def self.search(params)
@@ -44,14 +48,14 @@ class Stock < ActiveRecord::Base
     return data
   end
 
-  def self.getyearcodes
+  def self.get_year_codes
     fromstring = '&a=' + (Date.today.month.to_int - 1).to_s + '&b=' + Date.today.day.to_s + '&c=' + (Date.today.year.to_int - 1).to_s
     tostring = '&d=' + (Date.today.month.to_int - 1).to_s + '&e=' + Date.today.day.to_s + '&f=' + Date.today.year.to_s
     return fromstring + tostring + '&g=d&ignore=.csv'
   end
 
-  def self.getoverview(params)
-    uri = URI.encode('http://ichart.yahoo.com/table.csv?s=' + params[:symbol] + getyearcodes)
+  def self.get_overview(params)
+    uri = URI.encode('http://ichart.yahoo.com/table.csv?s=' + params[:symbol] + get_year_codes)
     body = Net::HTTP.get(URI.parse(uri)).to_s
     if body.include? '404 Not Found'
       @input = 404

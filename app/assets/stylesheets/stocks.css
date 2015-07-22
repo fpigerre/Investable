@@ -111,55 +111,34 @@ a:focus {
 }
 
 .circle-text {
-    width: 20%;
-    padding-bottom: 20px;
-    cursor: pointer;
+    background-color: #0074D9;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    height: 100px;
+    width: 200px;
 }
 
-.circle-text:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%;
-    background: #4679BD;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
+.circle-text:hover {
+    background-color: #004787;
 }
 
-.circle-text div {
-    position: absolute;
-    width: 100%;
-    padding-top: 70%;
-    line-height: 1em;
-    margin-top: -0.5em;
-    text-align: center;
+.circle-text p {
     color: white;
-}
-
-.circle-text div.price {
-    padding-top: 50%;
+    font-size: 20px;
+    padding: 30px;
+    text-align: center;
 }
 
 .circle-background {
-    width: 25%;
-    padding-bottom: 20px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    height: 100px;
+    width: 200px;
 }
 
-.circle-background:after {
-    content: "";
-    display: block;
+.circle-background img {
+    height: 100%;
     width: 100%;
-    height: 0;
-    padding-bottom: 100%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-
-    /*background: url("sinopec.png");*/
-    background: top no-repeat;
-    background-size: auto;
 }
 
 .table-heading {
@@ -177,7 +156,7 @@ a:focus {
 .status {
     margin-top: 70px;
     height: 75px;
-    background-color: #d5d5d5;
+    background-color: #D5D5D5;
     padding: 10px 50px 10px 50px;
 }
 
@@ -222,7 +201,11 @@ a:focus {
 }
 
 .content.grey {
-    background-color: #dddddd;
+    background-color: #DDDDDD;
+}
+
+.lightblue {
+    background-color: rgba(0, 116, 217, 0.31);
 }
 
 .btn > span {
