@@ -1,21 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= current_user.name %> Investable</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <%= stylesheet_link_tag 'bitcoin', media: 'all', 'data-turbolinks-track' => true %>
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
   <%= javascript_include_tag 'dygraph-combined.min', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <%= render 'partials/headtags' %>
 </head>
 <body>
 
