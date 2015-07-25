@@ -37,74 +37,85 @@
   </div>
 </nav>
 
-<div class="status">
-  <h1><%= @data[0].name.gsub('"', '') %></h1>
-
-  <div class="status-right top">
-    <small>Last Trade Price</small>
-    <% if @data[0].last_trade_price == 'N/A' %>
-        <h4>Not Currently Trading</h4>
-    <% else %>
-        <h4>$ <%= @data[0].last_trade_price %>
-          <% if @data[0].change.include? '+' %>
-              <small style="color: #009933;">
-          <% else %>
-              <small style="color: #D14836;">
-          <% end %>
-          <%= @data[0].change %></small></h4>
-    <% end %>
+<div class="top-view">
+  <div class="left-details">
+    <h1><%= @data[0].name.gsub('"', '') %></h1>
+    <hr>
+    <!-- TODO: Ensure that data is pulled from a database -->
+    <small>
+      <!-- Quick description goes here -->
+      Google’s mission is to organize the world’s information
+      and make it universally accessible and useful.
+    </small>
+    <p>
+      <!-- Extended information goes here -->
+    </p>
+  </div>
+  <div class="right-chart">
+    <div class="last-price">
+      <small>Last Trade Price</small>
+      <% if @data[0].last_trade_price == 'N/A' %>
+          <h4>Not Currently Trading</h4>
+      <% else %>
+          <h4>$ <%= @data[0].last_trade_price %>
+            <% if @data[0].change.include? '+' %>
+                <small style="color: #2ECC40;">
+            <% else %>
+                <small style="color: #FF4136;">
+            <% end %>
+            <%= @data[0].change %></small></h4>
+      <% end %>
+    </div>
+    <div class="graph-wrap">
+      <div id="graphdiv"></div>
+    </div>
   </div>
 </div>
-<div class="graph-wrap">
-  <div id="graphdiv"></div>
-</div>
-<div class="content-header">
-  <h3>Stock Information</h3>
 
-  <div class="status-right top">
+<div class="latest-info">
+  <div class="inline-bar clearfix">
+    <h3>Stock Information</h3>
     <%= follow_link($stock) %>
   </div>
-</div>
-<div class="content lightblue container-fluid">
-  <div class="row">
-    <div class="rounded-container left">
-      <h3>Latest Ask</h3>
-      <h5 class="status-right"><%= @data[0].ask %></h5>
-    </div>
-    <div class="rounded-container left">
-      <h3>Latest Bid</h3>
-      <h5 class="status-right"><%= @data[0].bid %></h5>
-    </div>
-    <div class="rounded-container right">
-      <h3>Open</h3>
-      <h5 class="status-right"><%= @data[0].open %></h5>
-    </div>
-    <div class="rounded-container right no-margin">
-      <h3>Close</h3>
-      <h5 class="status-right"><%= @data[0].close %></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="rounded-container left">
-      <h3>Volume</h3>
-      <h5 class="status-right"><%= number_with_delimiter(@data[0].volume, :delimiter => ',') %></h5>
-    </div>
-    <div class="rounded-container left">
-      <h3>Dividend Yield</h3>
-      <h5 class="status-right"><%= @data[0].dividend_yield %></h5>
-    </div>
-    <div class="rounded-container right">
-      <h3>Market Cap</h3>
-      <h5 class="status-right"><%= @data[0].market_capitalization %></h5>
-    </div>
-    <div class="rounded-container right no-margin">
-      <h3>Change</h3>
-      <h5 class="status-right"><%= @data[0].change_in_percent %></h5>
-    </div>
-  </div>
-</div>
-<div class="content container-fluid">
 
+  <div class="container-fluid">
+    <div class="row">
+      <div class="rounded-container">
+        <h4>Latest Ask</h4>
+        <h5 class="status-right"><%= @data[0].ask %></h5>
+      </div>
+      <div class="rounded-container">
+        <h4>Latest Bid</h4>
+        <h5 class="status-right"><%= @data[0].bid %></h5>
+      </div>
+      <div class="rounded-container">
+        <h4>Open</h4>
+        <h5 class="status-right"><%= @data[0].open %></h5>
+      </div>
+      <div class="rounded-container">
+        <h4>Close</h4>
+        <h5 class="status-right"><%= @data[0].close %></h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="rounded-container">
+        <h4>Volume</h4>
+        <h5 class="status-right"><%= number_with_delimiter(@data[0].volume, :delimiter => ',') %></h5>
+      </div>
+      <div class="rounded-container">
+        <h4>Dividend Yield</h4>
+        <h5 class="status-right"><%= @data[0].dividend_yield %></h5>
+      </div>
+      <div class="rounded-container">
+        <h4>Market Cap</h4>
+        <h5 class="status-right"><%= @data[0].market_capitalization %></h5>
+      </div>
+      <div class="rounded-container">
+        <h4>Change</h4>
+        <h5 class="status-right"><%= @data[0].change_in_percent %></h5>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript">
