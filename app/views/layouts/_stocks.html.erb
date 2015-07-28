@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= stylesheet_link_tag 'stocks', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'dygraph-combined.min', 'data-turbolinks-track' => true %>
+  <% content_for :styletags do %>
+      <%= stylesheet_link_tag 'stocks', media: 'all', 'data-turbolinks-track' => true %>
+  <% end %>
+
+  <% content_for :styletags do %>
+      <%= javascript_include_tag 'dygraph-combined.min', 'data-turbolinks-track' => true %>
+  <% end %>
   <%= render 'partials/headtags' %>
 </head>
 <body>

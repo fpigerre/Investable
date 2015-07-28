@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= stylesheet_link_tag 'bitcoin', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'dygraph-combined.min', 'data-turbolinks-track' => true %>
+  <% content_for :styletags do %>
+      <%= stylesheet_link_tag 'bitcoin', media: 'all', 'data-turbolinks-track' => true %>
+  <% end %>
+
+  <% content_for :jstags do %>
+      <%= javascript_include_tag 'dygraph-combined.min', 'data-turbolinks-track' => true %>
+  <% end %>
   <%= render 'partials/headtags' %>
 </head>
 <body>

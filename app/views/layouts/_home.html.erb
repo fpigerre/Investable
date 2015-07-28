@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
+  <% content_for :styletags do %>
+      <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
+  <% end %>
   <%= render 'partials/headtags' %>
 </head>
 <body>
