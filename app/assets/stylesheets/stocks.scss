@@ -114,6 +114,11 @@ a:focus {
   cursor: pointer;
 }
 
+.circle-wrapper {
+  display: block;
+  padding: 0 2%;
+}
+
 .circle-text {
   background-color: #00BCD4;
   border-top-left-radius: 100px;
@@ -247,6 +252,12 @@ a:focus {
 
   h5 {
     float: right;
+  }
+}
+
+@media (min-width: 300px) {
+  .circle-wrapper {
+    display: inline-block;
   }
 }
 

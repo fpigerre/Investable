@@ -20,7 +20,7 @@
     <% @stocks.each do |stock| %>
         <%= link_to stock_url(symbol: stock.symbol) do %>
             <% @data = YahooFinance.quotes([stock.symbol], [:name, :last_trade_price]) %>
-            <div class="col-xs-3">
+            <div class="circle-wrapper">
               <div class="circle-text">
                 <p>
                   <%= @data[0].name %>
