@@ -2,8 +2,10 @@
  *= require sweet-alert
  *= require nprogress
 */
-@import url(http://fonts.googleapis.com/css?family=Raleway:300);
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+@import url(//fonts.googleapis.com/css?family=Raleway:300);
+@import url(//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+
+$brand-color: #00BCD4;
 
 body, h1, h2, h3, h4, h5, h6, .username {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -52,7 +54,7 @@ a:focus {
 }
 
 .username {
-  font-family: 'Railway', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin-top: 2px;
   font-size: 13px;
   font-weight: 100;
@@ -78,8 +80,8 @@ a:focus {
 
 .navbar-default .brand {
   padding-left: 30px;
-  color: #00BCD4;
-  font-family: 'Railway', sans-serif;
+  color: $brand-color;
+  font-family: 'Raleway', sans-serif;
 }
 
 .logo {
@@ -120,7 +122,7 @@ a:focus {
 }
 
 .circle-text {
-  background-color: #00BCD4;
+  background-color: $brand-color;
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
   height: 100px;
@@ -128,7 +130,7 @@ a:focus {
 }
 
 .circle-text:hover {
-  background-color: #00abc3;
+  background-color: #00ABC3;
 }
 
 .circle-text p {
@@ -170,7 +172,7 @@ a:focus {
 }
 
 .left-details {
-  background-color: #00BCD4;
+  background-color: $brand-color;
   color: white;
   height: 100%;
   padding: 25px;
@@ -212,6 +214,17 @@ a:focus {
 .latest-info {
   height: 100%;
   position: relative;
+
+  .row {
+    margin: auto;
+    width: 75%;
+  }
+
+  .container-fluid {
+    background-color: $brand-color;
+    padding-bottom: 3%;
+    padding-top: 3%;
+  }
 }
 
 .inline-bar {
@@ -235,7 +248,8 @@ a:focus {
 }
 
 .rounded-container {
-  border: 1px solid #111111;
+  background-color: white;
+  border-radius: 20px;
   display: inline-block;
   height: 60px;
   margin: 5px;
@@ -296,11 +310,6 @@ a:focus {
     }
   }
 
-  .latest-info .container-fluid {
-    margin: auto;
-    width: 70%;
-  }
-
   .inline-bar {
     margin-top: 0;
     padding: 15px 5%;
@@ -308,6 +317,7 @@ a:focus {
 
   .rounded-container {
     height: 60px;
+    margin: 1%;
     width: 200px;
   }
 }
