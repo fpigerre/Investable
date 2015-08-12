@@ -23,11 +23,13 @@ class StocksController < ApplicationController
         create
       end
       $stock = Stock.find(params[:symbol])
+      $stock.update_properties
+      # Gather and check chart data
       @input = Stock.get_overview(params)
       if @input === 404
         not_found
       else
-        @data = YahooFinance.quotes([params[:symbol]], [:name, :last_trade_price, :ask, :bid, :open, :close, :volume, :market_capitalization, :dividend_yield, :dividend_per_share, :change, :change_in_percent, :last_trade_date])
+        @data = YahooFinance.quotes([params[:symbol]], [:name, :last_trade_price, :ask, :bid, :open, :close, :volume, :market_capitalization, :dividend_yield, :dividend_per_share, :change, :change_in_percent, :last_trade_date, :stock_exchange])
         respond_to do |format|
           format.html # show.html.erb
           format.json { render json: $stock }

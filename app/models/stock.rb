@@ -4,8 +4,6 @@ class Stock < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :exchange
-  has_one :name
-  has_one :color
 
   after_update { |stock| logger.info "Stock #{stock.symbol} updated" }
   validates :symbol, presence: true
@@ -81,5 +79,15 @@ class Stock < ActiveRecord::Base
       end
       return input
     end
+  end
+
+  def update_properties
+    data = YahooFinance.quotes([:symbol], [:name, :stock_exchange])
+    self[:name] = data[0].name.gsub('"', '')
+    self[:stock_exchange] = data[0].stock_exchange
+
+    file = File.read(Rails.root.join('app/assets/javascripts', 'descriptions.json'))
+    data_hash = JSON.parse(file)
+    puts data_hash[symbol]
   end
 end

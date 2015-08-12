@@ -20,11 +20,7 @@
     <h1><%= @data[0].name.gsub('"', '') %></h1>
     <hr>
     <!-- TODO: Ensure that data is pulled from a database -->
-    <small>
-      <!-- Quick description goes here -->
-      Google’s mission is to organize the world’s information
-      and make it universally accessible and useful.
-    </small>
+    <small><%= $stock[:description] %></small>
     <p>
       <!-- Extended information goes here -->
     </p>

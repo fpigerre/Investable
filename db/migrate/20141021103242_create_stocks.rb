@@ -5,6 +5,7 @@ class CreateStocks < ActiveRecord::Migration
       t.string :name
       t.string :stock_exchange
       t.string :color
+      t.string :description
     end
 
     add_index :stocks, :symbol, unique: true
