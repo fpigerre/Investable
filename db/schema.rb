@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20141216040250) do
     t.string "name"
     t.string "stock_exchange"
     t.string "color"
+    t.string "description"
   end
 
   add_index "stocks", ["symbol"], name: "index_stocks_on_symbol", unique: true
