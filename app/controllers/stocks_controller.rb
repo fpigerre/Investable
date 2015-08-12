@@ -23,7 +23,6 @@ class StocksController < ApplicationController
         create
       end
       $stock = Stock.find(params[:symbol])
-      $stock.update_properties
       # Gather and check chart data
       @input = Stock.get_overview(params)
       if @input === 404
@@ -41,7 +40,8 @@ class StocksController < ApplicationController
   end
 
   def create
-    @stock = Stock.new(symbol: params[:symbol], name: YahooFinance.quotes([params[:symbol]], [:name])[0].name)
+    @data = YahooFinance.quotes([params[:symbol]], [:name, :last_trade_price, :ask, :bid, :open, :close, :volume, :market_capitalization, :dividend_yield, :dividend_per_share, :change, :change_in_percent, :last_trade_date, :stock_exchange])
+    @stock = Stock.new(symbol: params[:symbol], name: @data[0].name.gsub('"', ''))
     @stock.save
   end
 

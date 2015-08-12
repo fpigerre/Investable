@@ -11,6 +11,7 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+schema.rb
 
 # Rails Secrets
 config/initializers/secret_token.rb
