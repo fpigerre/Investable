@@ -41,7 +41,11 @@ class StocksController < ApplicationController
 
   def create
     @data = YahooFinance.quotes([params[:symbol]], [:name, :last_trade_price, :ask, :bid, :open, :close, :volume, :market_capitalization, :dividend_yield, :dividend_per_share, :change, :change_in_percent, :last_trade_date, :stock_exchange])
-    @stock = Stock.new(symbol: params[:symbol], name: @data[0].name.gsub('"', ''))
+    file = IO.read(Rails.root.join('app/assets/javascripts', 'descriptions.json'))
+    data_hash = JSON.parse(file)
+    puts data_hash[params[:symbol]].join(' ')
+
+    @stock = Stock.new(symbol: params[:symbol], name: @data[0].name.gsub('"', ''), description: data_hash[params[:symbol]].join(' '))
     @stock.save
   end
 
