@@ -3,7 +3,7 @@
 ---
 
 Investable allows everyday people to easily access information about financial markets of interest to them.
-A preview of Investable's interfaces can be viewed at <a href="https://invis.io/N73SH4ESH">![Invision Logo](httpw://i.imgur.com/EhEekf7.png =80x28)</a>.
+A preview of Investable's interfaces can be viewed at <a href="https://invis.io/N73SH4ESH">![Invision Logo](https://i.imgur.com/EhEekf7.png =80x28)</a>.
 
 ## Installing Investable
 
