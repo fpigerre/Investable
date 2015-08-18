@@ -1,13 +1,11 @@
 Tabulous.setup do
-
   tabs do
-
     overview_tab do
       text { 'Overview' }
       link_path { bitcoin_path }
       visible_when { true }
       enabled_when { true }
-      active_when { in_action('overview').of_controller('bitcoin') }
+      active_when { in_action('index').of_controller('bitcoin') }
     end
 
     bitfinex_tab do
@@ -67,19 +65,4 @@ Tabulous.setup do
     # render_subtabs_when_empty false
 
   end
-
-  # The following will insert some CSS straight into your HTML so that you
-  # can quickly prototype an app with halfway-decent looking tabs.
-  #
-  # This scaffolding should be turned off and replaced by your own custom
-  # CSS before using tabulous in production.
-  use_css_scaffolding do
-    background_color '#CCCCCC'
-    text_color '#444444'
-    active_tab_color '#FFFFFF'
-    hover_tab_color '#DDDDDD'
-    inactive_tab_color '#AAAAAA'
-    inactive_text_color '#888888'
-  end
-
 end
