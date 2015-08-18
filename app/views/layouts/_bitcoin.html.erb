@@ -12,6 +12,28 @@
 </head>
 <body>
 
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="responsive-container">
+    <%= render 'partials/navheader' %>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-main">
+      <ul class="nav navbar-nav links">
+        <li><%= link_to 'Home', user_root_path %></li>
+        <li><%= link_to 'Comparison', comparison_path %></li>
+        <li><%= link_to 'Markets', markets_path %></li>
+        <li class="active"><%= link_to 'BitCoin', bitcoin_path %></li>
+      </ul>
+      <%= render 'partials/rightnav' %>
+    </div>
+  </div>
+</nav>
+
+<div class="secondary-nav">
+  <%= tabs %>
+  <%= subtabs %>
+</div>
+
 <%= yield %>
 
 </body>

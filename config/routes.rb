@@ -12,6 +12,13 @@ Rails.application.routes.draw do
   get '/comparison' => 'comparison#index', :as => 'comparison'
   get '/market' => 'market#index', :as => 'markets'
 
+  controller :bitcoin do
+    get 'bitcoin/bitfinex' => 'bitcoin#bitfinex', :as => 'bitfinex'
+    get 'bitcoin/bitstamp' => 'bitcoin#bitstamp', :as => 'bitstamp'
+    get 'bitcoin/btcchina' => 'bitcoin#btcchina', :as => 'btcchina'
+    get 'bitcoin/okcoin' => 'bitcoin#okcoin', :as => 'okcoin'
+  end
+
   resources :stocks, param: :symbol do
     member do
       post 'watch' => 'stocks#watch'

@@ -2,12 +2,44 @@ Tabulous.setup do
 
   tabs do
 
-    bitcoin_tab do
-      text          { 'Bitcoin' }
-      link_path     { bitcoin_path }
-      visible_when  { true }
-      enabled_when  { true }
-      active_when   { in_action('any').of_controller('bitcoin') }
+    overview_tab do
+      text { 'Overview' }
+      link_path { bitcoin_path }
+      visible_when { true }
+      enabled_when { true }
+      active_when { in_action('overview').of_controller('bitcoin') }
+    end
+
+    bitfinex_tab do
+      text { 'Bitfinex' }
+      link_path { bitfinex_path }
+      visible_when { true }
+      enabled_when { true }
+      active_when { in_action('bitfinex').of_controller('bitcoin') }
+    end
+
+    bitstamp_tab do
+      text { 'Bitstamp' }
+      link_path { bitstamp_path }
+      visible_when { true }
+      enabled_when { true }
+      active_when { in_action('bitstamp').of_controller('bitcoin') }
+    end
+
+    btcchina_tab do
+      text { 'BTC China' }
+      link_path { btcchina_path }
+      visible_when { true }
+      enabled_when { true }
+      active_when { in_action('btcchina').of_controller('bitcoin') }
+    end
+
+    okcoin_tab do
+      text { 'OKCoin' }
+      link_path { okcoin_path }
+      visible_when { true }
+      enabled_when { true }
+      active_when { in_action('okcoin').of_controller('bitcoin') }
     end
 
   end
@@ -28,7 +60,7 @@ Tabulous.setup do
     # :do_not_render -- do not draw the tabset
     # :raise_error -- raise an error
     # defaults to :do_not_render
-    # when_action_has_no_tab :do_not_render
+    when_action_has_no_tab :render
 
     # whether to always add the HTML markup for subtabs, even if empty
     # defaults to false
