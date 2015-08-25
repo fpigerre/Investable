@@ -7,8 +7,9 @@ A preview of Investable's interfaces can be viewed at <a href="https://invis.io/
 
 ## Installing Investable
 
-At the moment, Investable runs on Ruby `1.9.3` with Rails version `4.1.6`.
+At the moment, Investable runs on Ruby `1.9.3` with Rails version `4.2.3`.
 In order to install dependencies, simply run `bundle install`.
+If the `bundle` command is not available to you, the Bundler gem can be installed by running `gem install bundler`.
 Afterwards, a development server can be opened on `localhost:3000` by running `rails server`.
 
 ## License
@@ -20,6 +21,6 @@ but not limited to:
 - Modifying any part of the software
 - Using and modifying Investable without having to distribute the code
 
-As long as you include a copy of the [LICENSE]() file.
+As long as you include a copy of the [LICENSE](https://github.com/psgs/Investable/blob/master/LICENSE) file.
 
 More information can be found at [choosealicense.com](http://choosealicense.com/licenses/).
